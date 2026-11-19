@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Dualog Studio</title>
+    <meta name="description" content="Contact Dualog Studio or access the client login." />
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+    <main class="contact-page">
+        <header class="site-header">
+            <a class="brand" href="/index.html" aria-label="Dualog, back to homepage">Dualog<span>.</span></a>
+            <nav class="nav" id="menu" aria-label="Main navigation">
+                <a class="nav__close" href="#top" aria-label="Close menu"><span></span><span></span></a>
+                <a href="/work.html">Our Work</a>
+                <a href="/team.html">Team</a>
+                <a class="nav__contact" href="/contact.html" aria-current="page">Contact</a>
+            </nav>
+            <a class="menu-button" href="#menu" aria-label="Open menu"><span></span><span></span></a>
+        </header>
+
+        <section class="contact-hero page-shell" id="top">
+            <div class="hero__aurora" aria-hidden="true"></div>
+            <div class="hero__glow" aria-hidden="true"></div>
+            <h1>Let’s start<br />a conversation.</h1>
+            <div>
+                <p>
+                    Tell us what you are building, where you are now and what a meaningful next step could
+                    look like.
+                </p>
+                <span>New project availability — Spring 2026</span>
+            </div>
+        </section>
+
+        <section class="contact-hub page-shell">
+            <div class="contact-panel contact-panel--message">
+                <div class="contact-panel__heading">
+                    <p>Contact us</p>
+                    <h2>Write to us.</h2>
+                    <span>We usually reply within two working days.</span>
+                </div>
+                <form action="mailto:hello@dualog.studio" method="post" enctype="text/plain" class="inquiry-form">
+                    <label>
+                        <span>Your name</span>
+                        <input type="text" name="name" autocomplete="name" placeholder="Name" required />
+                    </label>
+                    <label>
+                        <span>Email address</span>
+                        <input type="email" name="email" autocomplete="email" placeholder="you@company.com" required />
+                    </label>
+                    <label>
+                        <span>Company or project</span>
+                        <input type="text" name="project" autocomplete="organization" placeholder="Optional" />
+                    </label>
+                    <label class="inquiry-form__message">
+                        <span>Your message</span>
+                        <textarea name="message" rows="6"
+                            placeholder="A little about your project, timeline and what you need." required></textarea>
+                    </label>
+                    <button class="cta-button" type="submit">Send email</button>
+                </form>
+            </div>
+
+            <aside class="contact-panel contact-panel--login" id="login">
+                <div class="contact-panel__heading">
+                    <p>Client area</p>
+                    <h2>Welcome back.</h2>
+                    <span>Sign in to access your client workspace.</span>
+                </div>
+                <form class="login-form" onsubmit="
+              this.querySelector('.login-form__status').hidden = false;
+              return false;
+            ">
+                    <label>
+                        <span>Email address</span>
+                        <input type="email" name="login-email" autocomplete="email" placeholder="you@company.com"
+                            required />
+                    </label>
+                    <label>
+                        <span>Password</span>
+                        <input type="password" name="password" autocomplete="current-password"
+                            placeholder="At least 8 characters" minlength="8" pattern="(?=.*[0-9]).{8,}"
+                            title="Use at least 8 characters and include at least one number." required />
+                        <small>At least 8 characters and one number.</small>
+                    </label>
+                    <button class="cta-button" type="submit">Sign in</button>
+                    <p class="login-form__status" role="status" hidden>
+                        Your login details meet the requirements.
+                    </p>
+                </form>
+            </aside>
+        </section>
+
+        <footer id="contact">
+            <div class="footer__nav page-shell">
+                <div class="footer__intro">
+                    <h2>Independent creative studio.</h2>
+                    <p>We build identities, content and digital products from strategy to launch.</p>
+                </div>
+                <div class="footer__columns">
+                    <nav class="footer__column" aria-label="Footer navigation">
+                        <h3>Pages</h3>
+                        <a href="/work.html">Our Work</a><a href="/team.html">Team</a><a href="/index.html">Home</a>
+                    </nav>
+                    <div class="footer__column">
+                        <h3>Contact</h3>
+                        <a href="mailto:hello@dualog.studio">hello@dualog.studio</a>
+                        <p>Berlin — Worldwide</p>
+                        <p class="footer__copyright">Dualog Studio © 2025</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>

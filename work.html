@@ -1,47 +1,150 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta name="author">
-    <title>BrandName</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Work — Dualog Studio</title>
+    <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
-    <header>
-        <h1>BrandName</h1>
+    <main class="work-page">
+        <header class="site-header">
+            <a class="brand" href="/index.html" aria-label="Dualog, back to homepage">Dualog<span>.</span></a>
+            <nav class="nav" id="menu" aria-label="Main navigation">
+                <a class="nav__close" href="#top" aria-label="Close menu"><span></span><span></span></a>
+                <a href="/work.html">Our Work</a>
+                <a href="/team.html">Team</a>
+                <a class="nav__contact" href="/contact.html">Contact</a>
+            </nav>
+            <a class="menu-button" href="#menu" aria-label="Open menu"><span></span><span></span></a>
+        </header>
 
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="page-intro">
-            <h2>What we do</h2>
-            <p>
-                bla bla bla bla
-            </p>
+        <section class="work-page__hero page-shell" id="top">
+            <div class="hero__aurora" aria-hidden="true"></div>
+            <div class="hero__glow" aria-hidden="true"></div>
+            <h1>Our work.</h1>
+            <div>
+                <p>Brand systems, content, 3D assets and digital products made for ambitious teams.</p>
+            </div>
         </section>
 
-        <section class="projects">
-            <article class="project-item">
+        <section class="work-filter page-shell" aria-label="Filter work by category">
+            <input type="radio" name="work-filter" id="filter-all" checked />
+            <input type="radio" name="work-filter" id="filter-content" />
+            <input type="radio" name="work-filter" id="filter-3d" />
+            <input type="radio" name="work-filter" id="filter-brand-ui" />
+            <input type="radio" name="work-filter" id="filter-research" />
 
-            </article>
+            <div class="work-filter__controls">
+                <label for="filter-all">Show all</label>
+                <label for="filter-content">Content production</label>
+                <label for="filter-3d">3D assets</label>
+                <label for="filter-brand-ui">Branding and UI design</label>
+                <label for="filter-research">UX research</label>
+            </div>
 
-            <article class="project-item">
-
-            </article>
-            
+            <div class="work-library">
+                <article class="work-library__card category-brand-ui">
+                    <img src="/images/cases/lumen-museum.jpg" alt="Purple-lit gallery space at the Lumen Kulturforum" />
+                    <div>
+                        <p>Branding / Graphic Design / Digital Identity</p>
+                        <span>2025</span>
+                    </div>
+                    <h2>Lumen Kulturforum</h2>
+                </article>
+                <article class="work-library__card category-content">
+                    <img src="/images/cases/vael-skincare.jpg"
+                        alt="Black Vael Botanics skincare packaging in a studio setting" />
+                    <div>
+                        <p>Content Production / Art Direction</p>
+                        <span>2025</span>
+                    </div>
+                    <h2>Vael Botanics</h2>
+                </article>
+                <article class="work-library__card category-content">
+                    <img src="/images/cases/resonanz-festival.jpg"
+                        alt="Artist performing for the Resonanz festival crowd" />
+                    <div>
+                        <p>Content Production / Motion / Campaign</p>
+                        <span>2024</span>
+                    </div>
+                    <h2>Resonanz</h2>
+                </article>
+                <article class="work-library__card category-brand-ui">
+                    <img src="/images/cases/volt-mobility.jpg"
+                        alt="Electric motorcycle moving through light trails at night" />
+                    <div>
+                        <p>UI Design / Digital Product / Launch</p>
+                        <span>2024</span>
+                    </div>
+                    <h2>Volt Rides</h2>
+                </article>
+                <article class="work-library__card category-research">
+                    <img src="/images/cases/terra-research.jpg"
+                        alt="Product team collaborating during a UX research session" />
+                    <div>
+                        <p>UX Research / Product Development</p>
+                        <span>2024</span>
+                    </div>
+                    <h2>Terra Systems</h2>
+                </article>
+                <article class="work-library__card category-3d">
+                    <img src="/images/cases/modular-3d.jpg"
+                        alt="Reflective purple 3D objects created for Modular Futures" />
+                    <div>
+                        <p>3D Assets / CGI / Graphic Design</p>
+                        <span>2023</span>
+                    </div>
+                    <h2>Modular Futures</h2>
+                </article>
+                <article class="work-library__card category-3d">
+                    <img src="/images/cases/forma-textile.jpg" alt="Close-up of layered textile material" />
+                    <div>
+                        <p>3D Materials / Art Direction</p>
+                        <span>2023</span>
+                    </div>
+                    <h2>Forma Studies</h2>
+                </article>
+                <article class="work-library__card category-research">
+                    <img src="/images/cases/terra-climate.jpg"
+                        alt="Earth seen from space for a climate data platform" />
+                    <div>
+                        <p>UX Research / Data Experience</p>
+                        <span>2023</span>
+                    </div>
+                    <h2>Terra Climate</h2>
+                </article>
+            </div>
         </section>
 
+        <section class="work-cta page-shell">
+            <h2>Let’s make something worth remembering.</h2>
+            <a class="cta-button" href="/contact.html">Get in touch</a>
+        </section>
+
+        <footer id="contact">
+            <div class="footer__nav page-shell">
+                <div class="footer__intro">
+                    <h2>Independent creative studio.</h2>
+                    <p>We build identities, content and digital products from strategy to launch.</p>
+                </div>
+                <div class="footer__columns">
+                    <nav class="footer__column" aria-label="Footer navigation">
+                        <h3>Pages</h3>
+                        <a href="/work.html">Our Work</a><a href="/team.html">Team</a><a href="#top">Back to top</a>
+                    </nav>
+                    <div class="footer__column">
+                        <h3>Contact</h3>
+                        <a href="mailto:hello@dualog.studio">hello@dualog.studio</a>
+                        <p>Berlin — Worldwide</p>
+                        <p class="footer__copyright">Dualog Studio © 2025</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </main>
-
-    <footer>
-
-    </footer>
 </body>
+
+</html>
