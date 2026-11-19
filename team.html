@@ -1,49 +1,157 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta name="author">
-    <title>BrandName</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team &amp; Studio — Dualog Studio</title>
+    <meta name="description" content="Meet the senior-led multidisciplinary team behind Dualog Studio." />
+    <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
-    <header>
-        <h1>BrandName</h1>
+    <main class="about-page">
+        <header class="site-header">
+            <a class="brand" href="/index.html" aria-label="Dualog, back to homepage">Dualog<span>.</span></a>
+            <nav class="nav" id="menu" aria-label="Main navigation">
+                <a class="nav__close" href="#top" aria-label="Close menu"><span></span><span></span></a>
+                <a href="/work.html">Our Work</a>
+                <a href="/team.html" aria-current="page">Team</a>
+                <a class="nav__contact" href="/contact.html">Contact</a>
+            </nav>
+            <a class="menu-button" href="#menu" aria-label="Open menu"><span></span><span></span></a>
+        </header>
 
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="our-story">
-            <h2>Our Story</h2>
-            <p>
-                bla bla bla bla
-            </p>
+        <section class="about-hero page-shell" id="top">
+            <div class="hero__aurora" aria-hidden="true"></div>
+            <div class="hero__glow" aria-hidden="true"></div>
+            <h1>Different minds.<br /><span>One shared standard.</span></h1>
         </section>
 
-        <section class="designers">
-            <article class="designer-card">
+        <section class="about-intro page-shell">
+            <div class="about-intro__lead">
+                <div class="section-label">
+                    <p>About us</p>
+                </div>
+                <h2>Small enough to stay close. Experienced enough to go deep.</h2>
+                <p>
+                    Dualog is the shared studio of Emma and Julia. We combine strategy, identity and digital
+                    design in one close process — from the first idea to the final detail.
+                </p>
+            </div>
+            <ol class="studio-timeline" aria-label="Our story">
+                <li>
+                    <time datetime="2020">2020</time>
+                    <div>
+                        <h3>First collaboration</h3>
+                        <p>Emma and Julia begin working together across identity and editorial design.</p>
+                    </div>
+                </li>
+                <li>
+                    <time datetime="2022">2022</time>
+                    <div>
+                        <h3>Dualog takes shape</h3>
+                        <p>A shared practice becomes an independent studio with one clear point of view.</p>
+                    </div>
+                </li>
+                <li>
+                    <time datetime="2024">2024</time>
+                    <div>
+                        <h3>Digital by default</h3>
+                        <p>Our work expands into digital products, motion and connected brand systems.</p>
+                    </div>
+                </li>
+                <li>
+                    <time datetime="2025">2025</time>
+                    <div>
+                        <h3>Berlin — worldwide</h3>
+                        <p>
+                            Two designers, one studio, collaborating with ambitious teams wherever they are.
+                        </p>
+                    </div>
+                </li>
+            </ol>
+        </section>
 
+        <section class="team page-shell" id="team">
+            <header class="team__heading">
+                <div class="section-label">
+                    <p>Team</p>
+                </div>
+                <h2>Two designers.<br />Two perspectives.</h2>
+            </header>
+
+            <article class="designer-profile">
+                <figure class="designer-profile__image">
+                    <img src="/images/team/mara.jpg" alt="Portrait of Emma" width="1200" height="936" />
+                </figure>
+                <div class="designer-profile__story">
+                    <p class="designer-profile__role">Emma — Co-Founder / Creative Direction</p>
+                    <h3>Ideas first.<br />Always.</h3>
+                    <p>
+                        Emma turns observations into clear creative directions. She connects strategy, words
+                        and visual ideas to shape identities that feel distinctive without losing their
+                        purpose.
+                    </p>
+                    <ul class="team__disciplines" aria-label="Emma's disciplines">
+                        <li>Brand strategy</li>
+                        <li>Creative direction</li>
+                        <li>Concept</li>
+                        <li>Editorial</li>
+                    </ul>
+                </div>
             </article>
 
-            <article class="designer-card">
-                
+            <article class="designer-profile">
+                <figure class="designer-profile__image">
+                    <img src="/images/team/aya.jpg" alt="Portrait of Julia" width="1200" height="1828" loading="lazy" />
+                </figure>
+                <div class="designer-profile__story">
+                    <p class="designer-profile__role">Julia — Co-Founder / Design Direction</p>
+                    <h3>Systems with<br />character.</h3>
+                    <p>
+                        Julia translates ideas into visual systems that work across every touchpoint. Her
+                        approach combines expressive typography, precise details and digital thinking.
+                    </p>
+                    <ul class="team__disciplines" aria-label="Julia's disciplines">
+                        <li>Visual identity</li>
+                        <li>Digital design</li>
+                        <li>Typography</li>
+                        <li>Motion</li>
+                    </ul>
+                </div>
             </article>
         </section>
 
+        <section class="about-cta page-shell">
+            <p>Have a project in mind?</p>
+            <div>
+                <h2>Let’s make something that matters.</h2>
+                <a class="cta-button" href="/contact.html">Start a conversation</a>
+            </div>
+        </section>
 
+        <footer id="contact">
+            <div class="footer__nav page-shell">
+                <div class="footer__intro">
+                    <h2>Independent creative studio.</h2>
+                    <p>We build identities, content and digital products from strategy to launch.</p>
+                </div>
+                <div class="footer__columns">
+                    <nav class="footer__column" aria-label="Footer navigation">
+                        <h3>Pages</h3>
+                        <a href="/work.html">Our Work</a><a href="/team.html">Team</a><a href="/index.html">Home</a>
+                    </nav>
+                    <div class="footer__column">
+                        <h3>Contact</h3>
+                        <a href="mailto:hello@dualog.studio">hello@dualog.studio</a>
+                        <p>Berlin — Worldwide</p>
+                        <p class="footer__copyright">Dualog Studio © 2025</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </main>
-
-    <footer>
-
-    </footer>
 </body>
 
 </html>
