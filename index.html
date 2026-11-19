@@ -6,15 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dualog Studio</title>
   <link rel="stylesheet" href="index.css" />
+  <script src="header-scroll.js" defer></script>
 </head>
 
 <body>
   <main>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Dualog, back to top"><img src="pictures/Logo.svg" alt="" width="72" height="21"></a>
-      <nav class="nav" id="menu" aria-label="Main navigation"><a class="nav__close" href="#top"
-          aria-label="Close menu"><span></span><span></span></a><a href="/work.html">Our Work</a><a
-          href="/team.html">Team</a><a class="nav__contact" href="/contact.html">Contact</a></nav>
+      <a class="brand" href="#top" aria-label="Dualog, back to top">
+        <img src="pictures/Logo.svg" alt="" width="72" height="21">
+      </a>
+      <nav class="nav" id="menu" aria-label="Main navigation">
+        <a class="nav__close" href="#top" aria-label="Close menu"><span></span><span></span></a>
+        <a href="/work.html">Our Work</a>
+        <a href="/team.html">Team</a>
+        <a class="nav__contact" href="/contact.html">Contact</a>
+      </nav>
       <a class="menu-button" href="#menu" aria-label="Open menu"><span></span><span></span></a>
     </header>
 
@@ -23,8 +29,8 @@
       <div class="hero__glow" aria-hidden="true"></div>
       <h1>We build <span>design</span><br />with impact.</h1>
       <div class="hero__footer">
-        <p>Content production, 3D assets, branding and digital products—from UX research to UI and development.</p><a
-          class="cta-button" href="/work.html">Explore work</a>
+        <p>Content production, 3D assets, branding and digital products—from UX research to UI and development.</p>
+        <a class="cta-button" href="/contact.html">Get in touch</a>
       </div>
     </section>
 
@@ -32,7 +38,8 @@
       <h2>Ideas should feel clear, not quiet.</h2>
       <div class="intro__copy">
         <p>We connect graphic design, content and technology to build brands and products people understand, use and
-          remember.</p><a class="cta-button" href="/work.html">Show our work</a>
+          remember.</p>
+        <a class="cta-button" href="/work.html">Show our work</a>
       </div>
     </section>
     <div class="figma-divider page-shell" aria-hidden="true"><img src="/assets/36679.svg" alt="" /></div>
@@ -146,22 +153,47 @@
         <h2>From first thought to lasting system.</h2><a class="cta-button" href="#contact">Start a project</a>
       </div>
       <div class="process__steps">
-        <article class="process-step"><span>01</span>
-          <h3>Discover</h3>
-          <p>We ask hard questions, listen closely and find the tension that makes your brand worth caring about.</p>
-        </article>
-        <article class="process-step"><span>02</span>
-          <h3>Define</h3>
-          <p>Strategy becomes a precise creative direction—clear enough to guide every decision that follows.</p>
-        </article>
-        <article class="process-step"><span>03</span>
-          <h3>Design</h3>
-          <p>We shape identity, interface and motion as one connected system, built to be felt and remembered.</p>
-        </article>
-        <article class="process-step"><span>04</span>
-          <h3>Deliver</h3>
-          <p>Together we refine, launch and equip your team with a system that stays powerful as you grow.</p>
-        </article>
+        <table class="process-table">
+          <caption>Our process</caption>
+          <tbody>
+            <tr class="process-step">
+              <td><span>01</span></td>
+              <td>
+                <h3>Discover</h3>
+              </td>
+              <td>
+                <p>We ask hard questions, listen closely and find the tension that makes your brand worth caring about.</p>
+              </td>
+            </tr>
+            <tr class="process-step">
+              <td><span>02</span></td>
+              <td>
+                <h3>Define</h3>
+              </td>
+              <td>
+                <p>Strategy becomes a precise creative direction—clear enough to guide every decision that follows.</p>
+              </td>
+            </tr>
+            <tr class="process-step">
+              <td><span>03</span></td>
+              <td>
+                <h3>Design</h3>
+              </td>
+              <td>
+                <p>We shape identity, interface and motion as one connected system, built to be felt and remembered.</p>
+              </td>
+            </tr>
+            <tr class="process-step">
+              <td><span>04</span></td>
+              <td>
+                <h3>Deliver</h3>
+              </td>
+              <td>
+                <p>Together we refine, launch and equip your team with a system that stays powerful as you grow.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
     <section class="statement">
@@ -169,8 +201,8 @@
         <div class="statement__layout">
           <p class="statement__quote">Small team.<br /><span>Big perspectives.</span></p>
           <div class="statement__aside">
-            <p class="statement__body">A senior team connecting brand, content, 3D and digital product.</p><a
-              class="cta-button" href="/team.html">Meet the team</a>
+            <p class="statement__body">A senior team connecting brand, content, 3D and digital product.</p>
+            <a class="cta-button" href="/team.html">Meet the team</a>
           </div>
         </div>
       </div>
@@ -180,34 +212,52 @@
       <div class="contact-form__intro">
         <h2>Tell us about your project.</h2>
       </div>
-      <form action="mailto:hello@dualog.studio" method="post" enctype="text/plain"><label><span>Your name</span><input
-            type="text" name="name" autocomplete="name" required /></label><label><span>Email address</span><input
-            type="email" name="email" autocomplete="email" required /></label><label><span>Project type</span><select
-            name="project-type" required>
+      <form action="mailto:hello@dualog.studio" method="post" enctype="text/plain">
+        <label>
+          <span>Your name</span>
+          <input type="text" name="name" autocomplete="name" required />
+        </label>
+        <label>
+          <span>Email address</span>
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+        <label>
+          <span>Project type</span>
+          <select name="project-type" required>
             <option value="">Select a discipline</option>
             <option>Content production</option>
             <option>3D assets</option>
             <option>Branding and UI design</option>
             <option>UX research</option>
             <option>Digital product development</option>
-          </select></label><label class="contact-form__message"><span>Tell us a little more</span><textarea
-            name="message" rows="5" required></textarea></label><button class="cta-button" type="submit">Send
-          inquiry</button></form>
+          </select>
+        </label>
+        <label class="contact-form__message">
+          <span>Tell us a little more</span>
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <button class="cta-button" type="submit">Send inquiry</button>
+      </form>
     </section>
 
     <footer id="contact">
       <div class="footer__nav page-shell">
         <div class="footer__intro">
+          <img class="footer__logo" src="pictures/Logo.svg" alt="Dualog" width="72" height="21">
           <h2>Independent creative studio.</h2>
           <p>We build identities, content and digital products from strategy to launch.</p>
         </div>
         <div class="footer__columns">
           <nav class="footer__column" aria-label="Footer navigation">
-            <h3>Pages</h3><a href="/work.html">Our Work</a><a href="/team.html">Team</a><a href="#top">Back to top</a>
+            <h3>Pages</h3>
+            <a href="/work.html">Our Work</a>
+            <a href="/team.html">Team</a>
+            <a href="#top">Back to top</a>
           </nav>
           <div class="footer__column">
-            <h3>Contact</h3><a href="mailto:hello@dualog.studio">hello@dualog.studio</a>
-            <p>Berlin — Worldwide</p>
+            <h3>Contact</h3>
+            <a href="mailto:hello@dualog.studio">hello@dualog.studio</a>
+            <a href="/contact.html">Contact page</a>
             <p class="footer__copyright">Dualog Studio © 2025</p>
           </div>
         </div>
