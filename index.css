@@ -119,13 +119,13 @@ html {
 }
 
 .brand {
-    font-size: 20px;
-    letter-spacing: -0.03em;
-    transition: color 180ms ease;
+    display: flex;
+    align-items: center;
 }
 
-.brand span {
-    color: var(--orange);
+.brand img {
+    width: 72px;
+    height: 21px;
 }
 
 .nav {
@@ -139,15 +139,18 @@ html {
     transition: color 180ms ease;
 }
 
-.brand:hover,
-.brand:focus-visible,
 .nav a:hover,
 .nav a:focus-visible {
     color: var(--orange);
 }
 
 .nav__contact {
-    color: var(--ink);
+    color: var(--orange);
+}
+
+.nav a.nav__contact:hover,
+.nav a.nav__contact:focus-visible {
+    color: #fff;
 }
 
 .nav__close {
@@ -1851,10 +1854,6 @@ footer>* {
     .site-header {
         height: 64px;
         padding-inline: 16px;
-    }
-
-    .brand {
-        font-size: 18px;
     }
 
     .menu-button {
