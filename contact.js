@@ -1,24 +1,8 @@
 function isValidPassword(password) {
-    if (password.length < 8) {
-        return false;
-    }
-
-    const uppercaseLetters = password.match(/[A-Z]/g);
-    if (!uppercaseLetters || uppercaseLetters.length < 2) {
-        return false;
-    }
-
-    const hasNumber = /[0-9]/.test(password);
-    if (!hasNumber) {
-        return false;
-    }
-
-    const hasSpecialChar = /[^A-Za-z0-9]/.test(password);
-    if (!hasSpecialChar) {
-        return false;
-    }
-
-    return true;
+    return password.length >= 8
+        && (password.match(/[A-Z]/g) || []).length >= 2
+        && /[0-9]/.test(password)
+        && /[^A-Za-z0-9]/.test(password);
 }
 
 const loginForm = document.getElementById("login-form");
