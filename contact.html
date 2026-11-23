@@ -8,12 +8,14 @@
     <meta name="description" content="Contact Dualog Studio or access the client login." />
     <link rel="stylesheet" href="index.css" />
     <script src="header-scroll.js" defer></script>
+    <script src="contact.js" defer></script>
 </head>
 
 <body>
     <main class="contact-page">
         <header class="site-header">
-            <a class="brand" href="/index.html" aria-label="Dualog, back to homepage"><img src="pictures/Logo.svg" alt="" width="72" height="21"></a>
+            <a class="brand" href="/index.html" aria-label="Dualog, back to homepage"><img src="pictures/Logo.svg"
+                    alt="" width="72" height="21"></a>
             <nav class="nav" id="menu" aria-label="Main navigation">
                 <a class="nav__close" href="#top" aria-label="Close menu"><span></span><span></span></a>
                 <a href="/work.html">Our Work</a>
@@ -43,18 +45,30 @@
                     <h2>Write to us.</h2>
                     <span>We usually reply within two working days.</span>
                 </div>
-                <form action="mailto:hello@dualog.studio" method="post" enctype="text/plain" class="inquiry-form">
+                <form action="mailto:hello@dualog.studio" method="post" enctype="text/plain" class="inquiry-form"
+                    id="contact-form">
                     <label>
                         <span>Your name</span>
-                        <input type="text" name="name" autocomplete="name" placeholder="Name" required />
+                        <input type="text" name="name" placeholder="Name" required />
                     </label>
                     <label>
                         <span>Email address</span>
-                        <input type="email" name="email" autocomplete="email" placeholder="you@company.com" required />
+                        <input type="email" name="email" placeholder="you@company.com" required />
                     </label>
                     <label>
                         <span>Company or project</span>
-                        <input type="text" name="project" autocomplete="organization" placeholder="Optional" />
+                        <input type="text" name="project" placeholder="Optional" />
+                    </label>
+                    <label>
+                        <span>Project type</span>
+                        <select name="project-type">
+                            <option value="">Select a discipline</option>
+                            <option>Content production</option>
+                            <option>3D assets</option>
+                            <option>Branding and UI design</option>
+                            <option>UX research</option>
+                            <option>Digital product development</option>
+                        </select>
                     </label>
                     <label class="inquiry-form__message">
                         <span>Your message</span>
@@ -71,28 +85,38 @@
                     <h2>Welcome back.</h2>
                     <span>Sign in to access your client workspace.</span>
                 </div>
-                <form class="login-form" onsubmit="
-              this.querySelector('.login-form__status').hidden = false;
-              return false;
-            ">
+                <form class="login-form" id="login-form">
                     <label>
-                        <span>Email address</span>
-                        <input type="email" name="login-email" autocomplete="email" placeholder="you@company.com"
-                            required />
+                        <span>Username</span>
+                        <input type="text" id="username" name="username" placeholder="Username" required />
                     </label>
                     <label>
                         <span>Password</span>
-                        <input type="password" name="password" autocomplete="current-password"
-                            placeholder="At least 8 characters" minlength="8" pattern="(?=.*[0-9]).{8,}"
-                            title="Use at least 8 characters and include at least one number." required />
-                        <small>At least 8 characters and one number.</small>
+                        <input type="password" id="password" name="password" placeholder="At least 8 characters"
+                            required />
+                        <small>At least 8 characters, 2 uppercase letters, 1 number, and 1 special character.</small>
                     </label>
                     <button class="cta-button" type="submit">Sign in</button>
-                    <p class="login-form__status" role="status" hidden>
-                        Your login details meet the requirements.
-                    </p>
+                    <p class="login-form__status" id="login-status" role="status" hidden></p>
                 </form>
             </aside>
+
+            <section class="contact-panel contact-panel--location" id="location">
+                <div class="contact-panel__heading">
+                    <p>Studio location</p>
+                    <h2>Where to find us.</h2>
+                    <span>Berlin — Worldwide</span>
+                    <div class="contact-location__details">
+                        <address>
+                            Berlin, Germany
+                        </address>
+                        <a href="https://maps.google.com/?q=Berlin" target="_blank" rel="noopener noreferrer" class="contact-location__link">View on Google Maps ↗</a>
+                    </div>
+                </div>
+                <div class="contact-location__image">
+                    <img src="pictures/berlin.png" alt="Dualog Studio Location in Berlin" width="1258" height="788" />
+                </div>
+            </section>
         </section>
 
         <footer id="contact">
@@ -109,7 +133,7 @@
                     <div class="footer__column">
                         <h3>Contact</h3>
                         <a href="mailto:hello@dualog.studio">hello@dualog.studio</a>
-                        <p>Berlin — Worldwide</p>
+                        <a href="https://maps.google.com/?q=Berlin" target="_blank" rel="noopener noreferrer">Berlin — Worldwide</a>
                         <p class="footer__copyright">Dualog Studio © 2025</p>
                     </div>
                 </div>
