@@ -124,6 +124,7 @@ html {
 
 .site-header--floating.site-header--hidden {
     transform: translateY(-100%);
+    pointer-events: none;
 }
 
 .brand,
@@ -259,6 +260,7 @@ html {
     background: rgba(159, 58, 228, 0.34);
     filter: blur(90px);
     opacity: 1;
+    pointer-events: none;
     transition: opacity 900ms 180ms ease;
 }
 
@@ -946,6 +948,14 @@ html {
     letter-spacing: -0.04em;
 }
 
+.work-library__summary {
+    max-width: 520px;
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
 #filter-content:checked~.work-library .work-library__card:not(.category-content),
 #filter-3d:checked~.work-library .work-library__card:not(.category-3d),
 #filter-brand-ui:checked~.work-library .work-library__card:not(.category-brand-ui),
@@ -1323,11 +1333,34 @@ html {
     line-height: 1.65;
 }
 
+.designer-profile__linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.designer-profile__linkedin::after {
+    content: "↗";
+    font-size: 16px;
+}
+
+.designer-profile__linkedin:hover {
+    color: var(--orange);
+}
+
+.designer-profile__linkedin--placeholder {
+    color: var(--muted);
+}
+
 .team__disciplines {
     display: flex;
     flex-wrap: wrap;
     gap: 9px;
-    margin: 38px 0 0;
+    margin: 18px 0 0;
     padding: 0;
     list-style: none;
 }
