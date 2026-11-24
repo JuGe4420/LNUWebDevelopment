@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="pictures/Favicon.svg" />
   <title>Dualog Studio</title>
   <link rel="stylesheet" href="index.css" />
   <script src="header-scroll.js" defer></script>
@@ -11,13 +12,20 @@
 
 <body>
   <main>
+    <svg class="svg-sprite" aria-hidden="true" focusable="false">
+      <symbol id="external-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 7h10v10"></path>
+        <path d="M7 17 17 7"></path>
+      </symbol>
+    </svg>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Dualog, back to top">
         <img src="pictures/Logo.svg" alt="" width="72" height="21">
       </a>
       <nav class="nav" id="menu" aria-label="Main navigation">
         <a class="nav__close" href="#top" aria-label="Close menu"><span></span><span></span></a>
-        <a href="work.html">Our Work</a>
+        <a href="work.html">Projects</a>
         <a href="team.html">Team</a>
         <a class="nav__contact" href="contact.html">Contact</a>
       </nav>
@@ -43,23 +51,7 @@
       </div>
     </section>
     <section class="work page-shell" id="work">
-      <div class="project-grid"><a class="project-card" href="https://drive.google.com/drive/folders/1cF8yQR7hkwyYCH8NEFq_pO6ansDmtK8A?usp=sharing" target="_blank" rel="noopener noreferrer">
-          <div class="project-card__image"><img src="pictures/content/Design/CoperatedDesignMalzanMediaworks.png"
-              alt="Coperated Design Malzan Mediaworks" /></div>
-          <div class="project-card__meta">
-            <div>
-              <h3>Malzan Mediaworks</h3>
-              <p>Corporate Design / Branding / Identity</p>
-            </div><span>2025</span>
-          </div>
-          <p class="project-card__summary">A full corporate design redesign — logo, colour system and brand guidelines
-            for a modern media production company.</p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round"
-            stroke-linejoin="round" class="project-card__link-icon" aria-hidden="true">
-            <path d="M7 7h10v10"></path>
-            <path d="M7 17 17 7"></path>
-          </svg>
-        </a>
+      <div class="project-grid">
         <a class="project-card" href="https://drive.google.com/drive/folders/1DYTa2SRRX9w5SYRrdJNVJdLeC7k0mgNj?usp=sharing" target="_blank" rel="noopener noreferrer">
           <div class="project-card__image"><img src="pictures/content/Design/PlakatRundgangHSFlensburg.png"
               alt="Plakat Rundgang Hochschule Flensburg" /></div>
@@ -70,12 +62,8 @@
             </div><span>2025</span>
           </div>
           <p class="project-card__summary">An event poster designed and art directed for Hochschule Flensburg — from
-            concept to print-ready layout.</p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round"
-            stroke-linejoin="round" class="project-card__link-icon" aria-hidden="true">
-            <path d="M7 7h10v10"></path>
-            <path d="M7 17 17 7"></path>
-          </svg>
+            concept to print-ready layout.</p><svg class="project-card__link-icon" width="24" height="24"
+            aria-hidden="true"><use href="#external-link-arrow"></use></svg>
         </a>
         <a class="project-card" href="https://www.miarabe-art.de" target="_blank" rel="noopener noreferrer">
           <div class="project-card__image"><img src="pictures/content/Design/MiaRabeWebsite.png" alt="Mia Rabe Website" /></div>
@@ -86,110 +74,34 @@
             </div><span>2025</span>
           </div>
           <p class="project-card__summary">Personal portfolio website — a clean and minimal digital presence designed to
-            let the work speak for itself.</p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round"
-            stroke-linejoin="round" class="project-card__link-icon" aria-hidden="true">
-            <path d="M7 7h10v10"></path>
-            <path d="M7 17 17 7"></path>
-          </svg>
-        </a>
-        <a class="project-card" href="https://drive.google.com/drive/folders/1H3gOHLUIA5ldTdJXq2iXQjAyV4Zp8S1x?usp=sharing" target="_blank" rel="noopener noreferrer">
-          <div class="project-card__image"><img src="pictures/content/3D/3DRendering.png" alt="Lego Minifigure CGI Rendering" /></div>
-          <div class="project-card__meta">
-            <div>
-              <h3>Lego Study — CGI Rendering</h3>
-              <p>3D Lighting / Shading / Rendering</p>
-            </div><span>2025</span>
-          </div>
-          <p class="project-card__summary">A dedicated lighting and rendering exploration — focusing on realistic surface materials, subsurface scattering, micro-imperfections and cinematic studio lighting.</p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round"
-            stroke-linejoin="round" class="project-card__link-icon" aria-hidden="true">
-            <path d="M7 7h10v10"></path>
-            <path d="M7 17 17 7"></path>
-          </svg>
-        </a>
-        <a class="project-card" href="https://drive.google.com/drive/folders/1FDO7btqngdBo2mFELggw_yZ-QfU2s9bs?usp=sharing" target="_blank" rel="noopener noreferrer">
-          <div class="project-card__image"><img src="pictures/content/3D/3DHand.png" alt="Digital Anatomy 3D Hand Modeling" /></div>
-          <div class="project-card__meta">
-            <div>
-              <h3>Digital Anatomy — 3D Hand Modeling</h3>
-              <p>3D Modeling / Sculpting / Topology</p>
-            </div><span>2025</span>
-          </div>
-          <p class="project-card__summary">Detailed organic 3D modeling and digital sculpting of human hand anatomy — crafted from scratch with precise proportions, clean quad topology and fine surface details.</p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round"
-            stroke-linejoin="round" class="project-card__link-icon" aria-hidden="true">
-            <path d="M7 7h10v10"></path>
-            <path d="M7 17 17 7"></path>
-          </svg>
+            let the work speak for itself.</p><svg class="project-card__link-icon" width="24" height="24"
+            aria-hidden="true"><use href="#external-link-arrow"></use></svg>
         </a>
         <a class="project-card" href="#contact">
           <div class="project-card__image"><img src="pictures/TravelBlog_MockUp.png"
               alt="Around South East Asia travel guide shown on a laptop and phone" /></div>
           <div class="project-card__meta">
             <div>
-              <h3>Around South East Asia</h3>
+              <h3>Webdesign Travelblog</h3>
               <p>Digital Product / UX &amp; UI Design / Travel</p>
             </div><span>2025</span>
           </div>
           <p class="project-card__summary">A responsive travel guide that turns a journey through Southeast Asia into an
-            immersive visual experience.</p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round"
-            stroke-linejoin="round" class="project-card__link-icon" aria-hidden="true">
-            <path d="M7 7h10v10"></path>
-            <path d="M7 17 17 7"></path>
-          </svg>
+            immersive visual experience.</p><svg class="project-card__link-icon" width="24" height="24"
+            aria-hidden="true"><use href="#external-link-arrow"></use></svg>
         </a>
-        <a class="project-card" href="#contact">
-          <div class="project-card__image"><img src="pictures/ZimmerMedizinsysteme_Branding.png"
-              alt="Zimmer Medizinsysteme brand identity mockup with logo, stationery and brochure" /></div>
-          <div class="project-card__meta">
-            <div>
-              <h3>Zimmer Medizinsysteme</h3>
-              <p>Branding / Logo Design / Graphic Design</p>
-            </div><span>2025</span>
-          </div>
-          <p class="project-card__summary">A distinctive brand identity for a medical systems company, spanning logo
-            design, graphic design and branded materials.</p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round"
-            stroke-linejoin="round" class="project-card__link-icon" aria-hidden="true">
-            <path d="M7 7h10v10"></path>
-            <path d="M7 17 17 7"></path>
-          </svg>
-        </a>
-        <a class="project-card" href="#contact">
+        <a class="project-card" href="https://dl.acm.org/doi/10.1145/3828158.3838249" target="_blank" rel="noopener noreferrer">
           <div class="project-card__image"><img src="pictures/AutoUI_PosterMadness.png"
               alt="AutoUI research poster about personality-informed emotional support in an automotive copilot" /></div>
           <div class="project-card__meta">
             <div>
-              <h3>AutoUI Poster Madness</h3>
+              <h3>AutoUI Research Paper</h3>
               <p>UX Research / Academic Research / AI Interaction Design</p>
             </div><span>2026</span>
           </div>
           <p class="project-card__summary">An academic UX research project exploring how personality profiles can guide
-            an automotive copilot’s emotional support for drivers.</p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round"
-            stroke-linejoin="round" class="project-card__link-icon" aria-hidden="true">
-            <path d="M7 7h10v10"></path>
-            <path d="M7 17 17 7"></path>
-          </svg>
-        </a>
-        <a class="project-card" href="#contact">
-          <div class="project-card__image"><img src="pictures/AppDesign_Mockup.png"
-              alt="Crisis Alert app shown on three mobile phone screens" /></div>
-          <div class="project-card__meta">
-            <div>
-              <h3>Crisis Alert</h3>
-              <p>Mobile-First / App Design / User-Centered Design</p>
-            </div><span>2024</span>
-          </div>
-          <p class="project-card__summary">A mobile-first alert app that helps people navigate emergencies with timely
-            warnings, saved evacuation routes and clear local information.</p><svg xmlns="http://www.w3.org/2000/svg" width="24"
-            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75"
-            stroke-linecap="round" stroke-linejoin="round" class="project-card__link-icon" aria-hidden="true">
-            <path d="M7 7h10v10"></path>
-            <path d="M7 17 17 7"></path>
-          </svg>
+            an automotive copilot’s emotional support for drivers.</p><svg class="project-card__link-icon" width="24" height="24"
+            aria-hidden="true"><use href="#external-link-arrow"></use></svg>
         </a>
       </div>
     </section>
@@ -296,9 +208,9 @@
         <div class="footer__columns">
           <nav class="footer__column" aria-label="Footer navigation">
             <h3>Pages</h3>
-            <a href="work.html">Our Work</a>
+            <a href="work.html">Projects</a>
             <a href="team.html">Team</a>
-            <a href="#top">Back to top</a>
+            <a href="index.html#top">Home</a>
           </nav>
           <div class="footer__column">
             <h3>Contact</h3>
