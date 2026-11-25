@@ -19,8 +19,8 @@ AI Disclosure (LNU Academic Integrity Guidelines):
 <body>
   <main>
     <svg class="svg-sprite" aria-hidden="true" focusable="false">
-      <symbol id="external-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round">
+      <symbol id="external-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75"
+        stroke-linecap="round" stroke-linejoin="round">
         <path d="M7 7h10v10"></path>
         <path d="M7 17 17 7"></path>
       </symbol>
@@ -58,7 +58,9 @@ AI Disclosure (LNU Academic Integrity Guidelines):
     </section>
     <section class="work page-shell" id="work">
       <div class="project-grid">
-        <a class="project-card" href="https://drive.google.com/drive/folders/1DYTa2SRRX9w5SYRrdJNVJdLeC7k0mgNj?usp=sharing" target="_blank" rel="noopener noreferrer">
+        <a class="project-card"
+          href="https://drive.google.com/drive/folders/1DYTa2SRRX9w5SYRrdJNVJdLeC7k0mgNj?usp=sharing" target="_blank"
+          rel="noopener noreferrer">
           <div class="project-card__image"><img src="pictures/content/Design/PlakatRundgangHSFlensburg.png"
               alt="Plakat Rundgang Hochschule Flensburg" /></div>
           <div class="project-card__meta">
@@ -69,10 +71,13 @@ AI Disclosure (LNU Academic Integrity Guidelines):
           </div>
           <p class="project-card__summary">An event poster designed and art directed for Hochschule Flensburg — from
             concept to print-ready layout.</p><svg class="project-card__link-icon" width="24" height="24"
-            aria-hidden="true"><use href="#external-link-arrow"></use></svg>
+            aria-hidden="true">
+            <use href="#external-link-arrow"></use>
+          </svg>
         </a>
         <a class="project-card" href="https://www.miarabe-art.de" target="_blank" rel="noopener noreferrer">
-          <div class="project-card__image"><img src="pictures/content/Design/MiaRabeWebsite.png" alt="Mia Rabe Website" /></div>
+          <div class="project-card__image"><img src="pictures/content/Design/MiaRabeWebsite.png"
+              alt="Mia Rabe Website" /></div>
           <div class="project-card__meta">
             <div>
               <h3>Mia Rabe — Portfolio Künstlerin</h3>
@@ -81,9 +86,11 @@ AI Disclosure (LNU Academic Integrity Guidelines):
           </div>
           <p class="project-card__summary">Personal portfolio website — a clean and minimal digital presence designed to
             let the work speak for itself.</p><svg class="project-card__link-icon" width="24" height="24"
-            aria-hidden="true"><use href="#external-link-arrow"></use></svg>
+            aria-hidden="true">
+            <use href="#external-link-arrow"></use>
+          </svg>
         </a>
-        <a class="project-card" href="#contact">
+        <a class="project-card" href="https://www.figma.com/proto/bBiF9vaB9DSiBK88U4BrUw/Untitled?page-id=0%3A1&amp;node-id=20-487&amp;starting-point-node-id=3%3A809&amp;t=YUS9Jtr148NNshN7-1">
           <div class="project-card__image"><img src="pictures/TravelBlog_MockUp.png"
               alt="Around South East Asia travel guide shown on a laptop and phone" /></div>
           <div class="project-card__meta">
@@ -94,11 +101,15 @@ AI Disclosure (LNU Academic Integrity Guidelines):
           </div>
           <p class="project-card__summary">A responsive travel guide that turns a journey through Southeast Asia into an
             immersive visual experience.</p><svg class="project-card__link-icon" width="24" height="24"
-            aria-hidden="true"><use href="#external-link-arrow"></use></svg>
+            aria-hidden="true">
+            <use href="#external-link-arrow"></use>
+          </svg>
         </a>
-        <a class="project-card" href="https://dl.acm.org/doi/10.1145/3828158.3838249" target="_blank" rel="noopener noreferrer">
+        <a class="project-card" href="https://dl.acm.org/doi/10.1145/3828158.3838249" target="_blank"
+          rel="noopener noreferrer">
           <div class="project-card__image"><img src="pictures/AutoUI_PosterMadness.png"
-              alt="AutoUI research poster about personality-informed emotional support in an automotive copilot" /></div>
+              alt="AutoUI research poster about personality-informed emotional support in an automotive copilot" />
+          </div>
           <div class="project-card__meta">
             <div>
               <h3>AutoUI Research Paper</h3>
@@ -106,8 +117,10 @@ AI Disclosure (LNU Academic Integrity Guidelines):
             </div><span>2026</span>
           </div>
           <p class="project-card__summary">An academic UX research project exploring how personality profiles can guide
-            an automotive copilot’s emotional support for drivers.</p><svg class="project-card__link-icon" width="24" height="24"
-            aria-hidden="true"><use href="#external-link-arrow"></use></svg>
+            an automotive copilot’s emotional support for drivers.</p><svg class="project-card__link-icon" width="24"
+            height="24" aria-hidden="true">
+            <use href="#external-link-arrow"></use>
+          </svg>
         </a>
       </div>
     </section>
@@ -176,14 +189,18 @@ AI Disclosure (LNU Academic Integrity Guidelines):
       <div class="contact-form__intro">
         <h2>Tell us about your project.</h2>
       </div>
-      <form action="mailto:hello@dualog.studio" method="post" enctype="text/plain">
+      <form class="inquiry-form" action="mailto:hello@dualog.studio" method="post" enctype="text/plain">
         <label>
           <span>Your name</span>
-          <input type="text" name="name" autocomplete="name" required />
+          <input type="text" name="name" placeholder="Name" autocomplete="name" required />
         </label>
         <label>
           <span>Email address</span>
-          <input type="email" name="email" autocomplete="email" required />
+          <input type="email" name="email" placeholder="you@company.com" autocomplete="email" required />
+        </label>
+        <label>
+          <span>Company or project</span>
+          <input type="text" name="project" placeholder="Optional" />
         </label>
         <label>
           <span>Project type</span>
@@ -196,11 +213,12 @@ AI Disclosure (LNU Academic Integrity Guidelines):
             <option>Digital product development</option>
           </select>
         </label>
-        <label class="contact-form__message">
-          <span>Tell us a little more</span>
-          <textarea name="message" rows="5" required></textarea>
+        <label class="inquiry-form__message">
+          <span>Your message</span>
+          <textarea name="message" rows="6" placeholder="A little about your project, timeline and what you need."
+            required></textarea>
         </label>
-        <button class="cta-button" type="submit">Send inquiry</button>
+        <button class="cta-button" type="submit">Send email</button>
       </form>
     </section>
 

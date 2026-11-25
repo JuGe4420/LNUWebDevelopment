@@ -4,6 +4,8 @@ AI Disclosure (LNU Academic Integrity Guidelines):
 - Purpose & Phase: Used during the initial phase to brainstorm and prototype the basic visual layout structure.
 - Student Contribution: All specific assignment requirements (navigation, bitmap/SVG integration, tables, lists, formular, responsive CSS3 adjustments, and the JavaScript password validation logic) were manually coded by the group members.
 */
+
+/* Fonts (all pages) */
 @font-face {
     font-family: "Coco Sharp";
     src: url("font/Coco-Sharp-Light-trial.ttf") format("truetype");
@@ -40,7 +42,7 @@ AI Disclosure (LNU Academic Integrity Guidelines):
     unicode-range: U+0030-0039;
 }
 
-/* Theme and base styles */
+/* Theme and base styles (all pages) */
 :root {
     --ink: #f2f0ef;
     --muted: #b8aebf;
@@ -103,7 +105,7 @@ html {
     color: var(--night-deep);
 }
 
-/* Shared layout and navigation */
+/* Shared layout and header navigation (all pages) */
 .page-shell {
     width: min(100% - 48px, 1280px);
     margin-inline: auto;
@@ -170,10 +172,6 @@ html {
     font-size: 13px;
 }
 
-.nav a {
-    text-decoration: none;
-}
-
 .nav a:hover,
 .nav a:focus-visible,
 .nav a[aria-current="page"] {
@@ -185,15 +183,12 @@ html {
     color: var(--orange);
 }
 
-.nav__close {
-    display: none;
-}
-
+.nav__close,
 .menu-button {
     display: none;
 }
 
-/* Shared hero styles */
+/* Shared hero sections and aurora effects (all pages) */
 .hero,
 .work-page__hero,
 .about-hero,
@@ -442,6 +437,7 @@ html {
     line-height: 1.45;
 }
 
+/* Shared buttons and section headings (all pages) */
 .cta-button {
     display: inline-flex;
     width: fit-content;
@@ -465,7 +461,8 @@ html {
 }
 
 .cta-button:hover,
-.cta-button:focus-visible {
+.cta-button:focus-visible,
+.cta-button:active {
     border-color: var(--orange);
     background: var(--orange);
     color: var(--night-deep);
@@ -473,12 +470,22 @@ html {
 
 .cta-button:active {
     transform: scale(0.97);
-    border-color: var(--orange);
-    background: var(--orange);
-    color: var(--night-deep);
 }
 
-/* Homepage sections */
+.intro h2,
+.process__intro h2,
+.about-intro__heading h2,
+.work-cta h2,
+.about-cta h2,
+.contact-form__intro h2 {
+    font-size: clamp(40px, 5.2vw, 76px);
+    font-weight: 700;
+    line-height: 0.96;
+    letter-spacing: -0.055em;
+    text-transform: uppercase;
+}
+
+/* Homepage: studio intro (index.html) */
 .intro {
     display: grid;
     grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
@@ -490,10 +497,7 @@ html {
 .intro h2 {
     max-width: 690px;
     font-size: clamp(42px, 5.4vw, 78px);
-    font-weight: 700;
     line-height: 0.98;
-    letter-spacing: -0.055em;
-    text-transform: uppercase;
 }
 
 .intro__copy {
@@ -507,6 +511,7 @@ html {
     line-height: 1.55;
 }
 
+/* Homepage: project cards (index.html) */
 .work {
     position: relative;
     isolation: isolate;
@@ -609,6 +614,7 @@ html {
     line-height: 1.5;
 }
 
+/* External link arrow icons (index.html & work.html) */
 .svg-sprite {
     position: absolute;
     width: 0;
@@ -639,6 +645,7 @@ html {
     color: var(--orange);
 }
 
+/* Homepage: studio statement (index.html) */
 .statement {
     position: relative;
     overflow: hidden;
@@ -659,7 +666,6 @@ html {
 }
 
 .statement__quote {
-    grid-column: 1;
     font-size: clamp(50px, 6.4vw, 92px);
     font-weight: 700;
     line-height: 0.92;
@@ -684,6 +690,7 @@ html {
     margin-top: 42px;
 }
 
+/* Process table & timeline list typography (index.html & team.html) */
 .process {
     position: relative;
     isolation: isolate;
@@ -705,19 +712,11 @@ html {
     pointer-events: none;
 }
 
-.process__intro {
-    grid-column: 1;
-    grid-row: 1;
-}
-
 .process__intro h2,
 .about-intro__heading h2 {
     max-width: 620px;
     font-size: clamp(40px, 5.2vw, 72px);
-    font-weight: 700;
     line-height: 0.98;
-    letter-spacing: -0.055em;
-    text-transform: uppercase;
 }
 
 .process__intro .cta-button {
@@ -793,7 +792,16 @@ html {
     line-height: 1.55;
 }
 
-/* Team introduction and timeline */
+/* Team page: timeline and designer profiles (team.html) */
+.about-page {
+    min-height: 100vh;
+    background: var(--night);
+}
+
+.about-hero h1 {
+    grid-column: 1 / -1;
+}
+
 .about-intro {
     padding-block: 150px 80px;
 }
@@ -817,7 +825,178 @@ html {
     list-style: none;
 }
 
-/* Work page */
+.studio-timeline li {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 20px;
+    padding-block: 34px;
+}
+
+@keyframes team-scroll-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+
+        .about-intro__heading,
+        .studio-timeline li,
+        .designer-profile {
+            animation: team-scroll-reveal linear both;
+            animation-timeline: view();
+        }
+
+        .about-intro__heading {
+            animation-range: entry 60% entry 100%;
+        }
+
+        .studio-timeline li {
+            animation-range: entry 100% cover 20%;
+        }
+
+        .designer-profile {
+            animation-range: entry 10% entry 100%;
+        }
+    }
+}
+
+.team {
+    padding-block: 100px;
+}
+
+.team__heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    gap: clamp(38px, 6vw, 90px);
+    align-items: start;
+    margin-bottom: 40px;
+}
+
+.team__heading h2 {
+    font-size: clamp(36px, 4.5vw, 62px);
+    font-weight: 700;
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+}
+
+.team__heading>p {
+    max-width: 510px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.designer-profile {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(80px, 10vw, 150px);
+    align-items: center;
+    padding-block: 80px 50px;
+}
+
+.team__heading+.designer-profile {
+    padding-top: 40px;
+}
+
+.designer-profile__image {
+    position: relative;
+    height: 620px;
+    margin: 0;
+}
+
+.designer-profile:last-of-type .designer-profile__image {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.designer-profile__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid rgba(242, 240, 239, 0.16);
+    border-radius: 18px;
+    filter: saturate(0.65) contrast(1.04);
+}
+
+.designer-profile:first-of-type .designer-profile__image img {
+    object-position: 50% 30%;
+}
+
+.designer-profile__role {
+    color: var(--orange);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.designer-profile__story h3 {
+    max-width: 590px;
+    margin-top: 44px;
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 700;
+    line-height: 0.94;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+}
+
+.designer-profile__story>p:not(.designer-profile__role) {
+    max-width: 520px;
+    margin-top: 30px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.designer-profile__linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.designer-profile__linkedin::after {
+    content: "↗";
+    font-size: 16px;
+}
+
+.designer-profile__linkedin:hover {
+    color: var(--orange);
+}
+
+.team__disciplines {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 18px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.team__disciplines li {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 8px 13px 7px;
+    color: var(--ink);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* Projects page: filter and project grid (work.html) */
 .work-page {
     min-height: 100vh;
     background: var(--night);
@@ -990,7 +1169,7 @@ html {
     display: none;
 }
 
-/* Shared calls to action and forms */
+/* Shared call-to-action banners (work.html & team.html) */
 .work-cta,
 .about-cta {
     display: grid;
@@ -1005,20 +1184,12 @@ html {
 .about-cta h2 {
     max-width: 780px;
     font-size: clamp(42px, 5.6vw, 76px);
-    font-weight: 700;
     line-height: 0.95;
-    letter-spacing: -0.055em;
-    text-transform: uppercase;
 }
 
 .work-cta .cta-button,
 .about-cta .cta-button {
     grid-column: 2;
-}
-
-.work-cta>div,
-.about-cta>div {
-    grid-column: 1;
 }
 
 .work-cta>div>p,
@@ -1031,6 +1202,7 @@ html {
     text-transform: uppercase;
 }
 
+/* Forms: inquiry and login (index.html & contact.html) */
 .contact-form {
     display: grid;
     grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
@@ -1042,34 +1214,18 @@ html {
 .contact-form__intro h2 {
     max-width: 600px;
     font-size: clamp(40px, 5vw, 70px);
-    font-weight: 700;
-    line-height: 0.96;
-    letter-spacing: -0.055em;
-    text-transform: uppercase;
 }
 
-.contact-form form,
 .inquiry-form,
 .login-form {
     display: grid;
+    gap: 28px 20px;
 }
 
-.contact-form form,
 .inquiry-form {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.contact-form form {
-    gap: 30px 22px;
-}
-
-.inquiry-form,
-.login-form {
-    gap: 28px 20px;
-    margin-top: 0;
-}
-
-.contact-form label,
 .inquiry-form label,
 .login-form label {
     display: flex;
@@ -1078,20 +1234,12 @@ html {
     gap: 10px;
 }
 
-.contact-form label {
-    gap: 11px;
-}
-
-.contact-form label>span,
 .inquiry-form label>span,
 .login-form label>span {
     color: var(--muted);
     font-size: 11px;
 }
 
-.contact-form input,
-.contact-form select,
-.contact-form textarea,
 .inquiry-form input,
 .inquiry-form select,
 .inquiry-form textarea,
@@ -1108,17 +1256,10 @@ html {
     transition: border-color 180ms ease;
 }
 
-.contact-form input,
-.contact-form select,
 .inquiry-form input,
 .inquiry-form select,
 .login-form input {
     height: 48px;
-}
-
-.contact-form textarea {
-    min-height: 120px;
-    resize: vertical;
 }
 
 .inquiry-form textarea {
@@ -1126,15 +1267,21 @@ html {
     resize: vertical;
 }
 
-.contact-form select option,
+.inquiry-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(242,240,239,0.5)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 4px center;
+    padding-right: 24px;
+}
+
 .inquiry-form select option {
     background: var(--night);
     color: var(--ink);
 }
 
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus,
 .inquiry-form input:focus,
 .inquiry-form select:focus,
 .inquiry-form textarea:focus,
@@ -1142,12 +1289,10 @@ html {
     border-color: var(--orange);
 }
 
-.contact-form__message,
 .inquiry-form__message {
     grid-column: 1 / -1;
 }
 
-.contact-form form .cta-button,
 .inquiry-form .cta-button,
 .login-form .cta-button {
     width: fit-content;
@@ -1155,198 +1300,23 @@ html {
     cursor: pointer;
 }
 
-/* Team page */
-.about-page {
-    min-height: 100vh;
-    background: var(--night);
+.login-form input:invalid:not(:placeholder-shown) {
+    border-color: rgba(245, 77, 2, 0.8);
 }
 
-.about-hero h1 {
-    grid-column: 1 / -1;
-    max-width: 1180px;
-}
-
-.team__heading h2 {
-    font-size: clamp(36px, 4.5vw, 62px);
-    font-weight: 700;
-    line-height: 0.98;
-    letter-spacing: -0.05em;
-    text-transform: uppercase;
-}
-
-.studio-timeline li {
-    display: grid;
-    grid-template-columns: 110px minmax(0, 0.85fr) minmax(0, 1.15fr);
-    gap: 20px;
-    padding-block: 34px;
-}
-
-@keyframes team-scroll-reveal {
-    from {
-        opacity: 0;
-        transform: translateY(18px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@supports (animation-timeline: view()) {
-    @media (prefers-reduced-motion: no-preference) {
-
-        .about-intro__heading,
-        .studio-timeline li,
-        .designer-profile {
-            animation: team-scroll-reveal linear both;
-            animation-timeline: view();
-        }
-
-        .about-intro__heading {
-            animation-range: entry 60% entry 100%;
-        }
-
-        .studio-timeline li {
-            animation-range: entry 100% cover 20%;
-        }
-
-        .designer-profile {
-            animation-range: entry 10% entry 100%;
-        }
-    }
-}
-
-.team {
-    padding-block: 100px 100px;
-}
-
-.team__heading {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-    gap: clamp(38px, 6vw, 90px);
-    align-items: start;
-    margin-bottom: 40px;
-}
-
-.team__heading h2 {
-    max-width: 760px;
-}
-
-.team__heading>p {
-    max-width: 510px;
+.login-form small {
     color: var(--muted);
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-.designer-profile {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(80px, 10vw, 150px);
-    align-items: center;
-    padding-block: 80px 50px;
-}
-
-.team__heading+.designer-profile {
-    padding-top: 40px;
-}
-
-.designer-profile__image {
-    position: relative;
-    height: 620px;
-    margin: 0;
-}
-
-.designer-profile:last-of-type .designer-profile__image {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.designer-profile:last-of-type .designer-profile__story {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.designer-profile__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: 1px solid rgba(242, 240, 239, 0.16);
-    border-radius: 18px;
-    filter: saturate(0.65) contrast(1.04);
-}
-
-.designer-profile:first-of-type .designer-profile__image img {
-    object-position: 50% 30%;
-}
-
-.designer-profile__role {
-    color: var(--orange);
     font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    line-height: 1.4;
 }
 
-.designer-profile__story h3 {
-    max-width: 590px;
-    margin-top: 44px;
-    font-size: clamp(42px, 5vw, 68px);
-    font-weight: 700;
-    line-height: 0.94;
-    letter-spacing: -0.05em;
-    text-transform: uppercase;
-}
-
-.designer-profile__story>p:not(.designer-profile__role) {
-    max-width: 520px;
-    margin-top: 30px;
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.65;
-}
-
-.designer-profile__linkedin {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 20px;
-    color: var(--ink);
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.designer-profile__linkedin::after {
-    content: "↗";
-    font-size: 16px;
-}
-
-.designer-profile__linkedin:hover {
+.login-form__status {
     color: var(--orange);
+    font-size: 11px;
+    line-height: 1.5;
 }
 
-.team__disciplines {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 9px;
-    margin: 18px 0 0;
-    padding: 0;
-    list-style: none;
-}
-
-.team__disciplines li {
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    padding: 8px 13px 7px;
-    color: var(--ink);
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-}
-
-/* Contact page */
+/* Contact page: location and panels (contact.html) */
 .contact-page {
     min-height: 100vh;
     background: var(--night);
@@ -1390,6 +1360,10 @@ html {
     padding-bottom: 100px;
 }
 
+.contact-panel--message {
+    border-top: 0;
+}
+
 .contact-location__details {
     margin-top: 32px;
     display: flex;
@@ -1431,10 +1405,6 @@ html {
     border: 1px solid rgba(242, 240, 239, 0.1);
 }
 
-.contact-panel--message {
-    border-top: 0;
-}
-
 .contact-panel__heading>p {
     color: var(--orange);
     font-size: 10px;
@@ -1461,33 +1431,7 @@ html {
     line-height: 1.5;
 }
 
-.inquiry-form select {
-    appearance: none;
-    -webkit-appearance: none;
-    cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(242,240,239,0.5)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 4px center;
-    padding-right: 24px;
-}
-
-.login-form input:invalid:not(:placeholder-shown) {
-    border-color: rgba(245, 77, 2, 0.8);
-}
-
-.login-form small {
-    color: var(--muted);
-    font-size: 10px;
-    line-height: 1.4;
-}
-
-.login-form__status {
-    color: var(--orange);
-    font-size: 11px;
-    line-height: 1.5;
-}
-
-/* Shared footer */
+/* Shared footer (all pages) */
 footer {
     position: relative;
     isolation: isolate;
@@ -1542,7 +1486,6 @@ footer>* {
 }
 
 .footer__logo {
-    display: block;
     width: 72px;
     height: 21px;
     margin-bottom: 28px;
@@ -1605,8 +1548,7 @@ footer>* {
     color: var(--muted);
 }
 
-/* Responsive layouts */
-/* Tablet */
+/* Responsive: tablet (<= 1024px) */
 @media (max-width: 1024px) {
     .nav {
         gap: clamp(24px, 4vw, 40px);
@@ -1617,6 +1559,7 @@ footer>* {
         min-height: 580px;
     }
 
+    /* Homepage (index.html) */
     .intro {
         grid-template-columns: 1fr;
         gap: 48px;
@@ -1645,20 +1588,17 @@ footer>* {
         padding-block: 125px 140px;
     }
 
-    .about-intro {
-        padding-block: 125px 80px;
-    }
-
-    .process__intro h2 {
-        max-width: 620px;
-    }
-
     .process__steps {
         margin-top: 70px;
     }
 
     .statement__layout {
         gap: 64px;
+    }
+
+    /* Team page (team.html) */
+    .about-intro {
+        padding-block: 125px 80px;
     }
 
     .team {
@@ -1674,7 +1614,6 @@ footer>* {
     }
 
     .designer-profile {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 60px;
         padding-block: 70px 45px;
     }
@@ -1687,8 +1626,8 @@ footer>* {
         font-size: clamp(40px, 5.6vw, 58px);
     }
 
+    /* Contact page and forms (contact.html & index.html) */
     .contact-hero {
-        min-height: 350px;
         grid-template-columns: 1.1fr 0.9fr;
         gap: 42px;
     }
@@ -1711,13 +1650,15 @@ footer>* {
         grid-column: 1;
     }
 
+    /* Footer */
     .footer__nav {
         gap: 72px;
     }
 }
 
-/* Mobile */
+/* Responsive: mobile (<= 767px) */
 @media (max-width: 767px) {
+    /* Layout and mobile menu */
     .page-shell {
         width: min(100% - 32px, 1280px);
     }
@@ -1802,6 +1743,7 @@ footer>* {
         transform: rotate(-45deg);
     }
 
+    /* Heroes (all pages) */
     .hero,
     .about-hero,
     .work-page__hero,
@@ -1838,6 +1780,7 @@ footer>* {
         justify-content: space-between;
     }
 
+    /* Homepage (index.html) */
     .intro {
         gap: 32px;
         padding-block: 135px 95px;
@@ -1900,11 +1843,6 @@ footer>* {
         margin-top: 62px;
     }
 
-    .statement__quote,
-    .statement__aside {
-        grid-column: 1;
-    }
-
     .statement__quote {
         grid-row: 1;
         font-size: 47px;
@@ -1920,10 +1858,6 @@ footer>* {
 
     .process {
         padding-block: 105px 115px;
-    }
-
-    .about-intro {
-        padding-block: 105px 70px;
     }
 
     .process__intro h2,
@@ -1944,7 +1878,6 @@ footer>* {
 
     .process-step td {
         display: block;
-        width: auto;
         padding: 0;
     }
 
@@ -1975,6 +1908,7 @@ footer>* {
         margin-top: 8px;
     }
 
+    /* Team page (team.html) */
     .about-hero,
     .work-page__hero {
         min-height: 300px;
@@ -1989,13 +1923,14 @@ footer>* {
         font-size: 42px;
     }
 
-    .about-intro__heading {
-        display: block;
-        margin-bottom: 44px;
+    .about-intro {
+        padding-block: 105px 70px;
     }
 
-    .about-intro__heading .cta-button {
-        margin-top: 24px;
+    .about-intro__heading {
+        display: grid;
+        gap: 24px;
+        margin-bottom: 44px;
     }
 
     .studio-timeline li {
@@ -2045,11 +1980,6 @@ footer>* {
         padding-top: 30px;
     }
 
-    .designer-profile:last-of-type .designer-profile__image,
-    .designer-profile:last-of-type .designer-profile__story {
-        grid-column: 1;
-    }
-
     .designer-profile:last-of-type .designer-profile__image {
         grid-row: 1;
     }
@@ -2067,6 +1997,7 @@ footer>* {
         font-size: clamp(38px, 12vw, 54px);
     }
 
+    /* Projects page (work.html) */
     .work-filter {
         padding-block: 26px 110px;
     }
@@ -2102,32 +2033,29 @@ footer>* {
         border-radius: 26px;
     }
 
+    /* Shared CTAs and forms (work.html, team.html, index.html, contact.html) */
     .work-cta,
-    .about-cta,
+    .about-cta {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding-block: 90px 110px;
+    }
+
     .contact-form {
         grid-template-columns: 1fr;
         gap: 48px;
         padding-block: 90px 110px;
     }
 
-    .work-cta .cta-button,
-    .about-cta .cta-button {
-        grid-column: 1;
-        margin-top: -16px;
-    }
-
     .contact-form__intro h2 {
         font-size: 44px;
     }
 
-    .contact-form form {
+    .inquiry-form {
         grid-template-columns: 1fr;
     }
 
-    .contact-form__message {
-        grid-column: 1;
-    }
-
+    /* Contact page (contact.html) */
     .contact-hero {
         min-height: 300px;
         grid-template-columns: 1fr;
@@ -2154,6 +2082,7 @@ footer>* {
         font-size: 42px;
     }
 
+    /* Footer */
     .footer__nav {
         display: block;
         padding-block: 64px 70px;
@@ -2168,7 +2097,7 @@ footer>* {
     }
 }
 
-/* small/old mobile */
+/* Responsive: small mobile */
 @media (max-width: 420px) {
     .hero {
         height: 640px;
@@ -2197,7 +2126,7 @@ footer>* {
     }
 }
 
-/* Reduced motion */
+/* Accessibility: reduced motion (all pages) */
 @media (prefers-reduced-motion: reduce) {
 
     .hero::after,
