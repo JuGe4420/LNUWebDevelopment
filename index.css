@@ -1,5 +1,9 @@
-/* Font faces */
-/* Trial font numerals are watermarked, so digits fall back to Inter. */
+/* 
+AI Disclosure (LNU Academic Integrity Guidelines):
+- Tool used: Figma make, Github copilot
+- Purpose & Phase: Used during the initial phase to brainstorm and prototype the basic visual layout structure.
+- Student Contribution: All specific assignment requirements (navigation, bitmap/SVG integration, tables, lists, formular, responsive CSS3 adjustments, and the JavaScript password validation logic) were manually coded by the group members.
+*/
 @font-face {
     font-family: "Coco Sharp";
     src: url("font/Coco-Sharp-Light-trial.ttf") format("truetype");
@@ -146,7 +150,6 @@ html {
 
 .brand,
 .nav {
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-weight: 700;
 }
 
@@ -191,14 +194,43 @@ html {
 }
 
 /* Shared hero styles */
-.hero {
+.hero,
+.work-page__hero,
+.about-hero,
+.contact-hero {
     position: relative;
-    height: min(720px, 92vh);
-    min-height: 600px;
     margin-top: 82px;
     overflow: visible;
     border-radius: 20px;
+}
+
+.hero {
+    height: min(720px, 92vh);
+    min-height: 600px;
     background: var(--night);
+}
+
+.work-page__hero,
+.about-hero,
+.contact-hero {
+    display: grid;
+    min-height: 350px;
+    align-content: center;
+}
+
+.work-page__hero,
+.about-hero {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    background: var(--night);
+    padding: 54px 5.3% 42px;
+}
+
+.contact-hero {
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 60px;
+    background: transparent;
+    padding: 70px 5.3% 56px;
 }
 
 .hero::after,
@@ -232,6 +264,7 @@ html {
     position: absolute;
     z-index: 1;
     inset: 0;
+    border-radius: inherit;
     background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
     background-size: 100% 80px;
     content: "";
@@ -242,14 +275,36 @@ html {
     transition: opacity 900ms 120ms ease;
 }
 
-.work-page__hero::before,
-.about-hero::before,
-.contact-hero::before {
-    border-radius: inherit;
-}
-
 .hero>* {
     z-index: 2;
+}
+
+.work-page__hero>.hero__aurora,
+.work-page__hero>.hero__glow,
+.about-hero>.hero__aurora,
+.about-hero>.hero__glow,
+.contact-hero>.hero__aurora,
+.contact-hero>.hero__glow {
+    z-index: 1;
+}
+
+.work-page__hero>h1,
+.work-page__hero>div:not(.hero__aurora):not(.hero__glow),
+.about-hero h1,
+.contact-hero>h1,
+.contact-hero__copy {
+    position: relative;
+    z-index: 2;
+}
+
+.work-page__hero h1,
+.about-hero h1,
+.contact-hero h1 {
+    font-size: clamp(44px, 5.8vw, 72px);
+    font-weight: 700;
+    line-height: 0.88;
+    letter-spacing: -0.065em;
+    text-transform: uppercase;
 }
 
 .hero__aurora {
@@ -268,6 +323,15 @@ html {
     opacity: 0.8;
     pointer-events: none;
     animation: hero-aurora-drift 11s ease-in-out infinite alternate;
+}
+
+.work-page__hero>.hero__aurora,
+.about-hero>.hero__aurora,
+.contact-hero>.hero__aurora {
+    top: -28%;
+    bottom: -28%;
+    filter: blur(16px);
+    opacity: 1;
 }
 
 @keyframes hero-aurora-drift {
@@ -346,7 +410,6 @@ html {
     position: absolute;
     bottom: 148px;
     left: 5.3%;
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: clamp(50px, 7.8vw, 110px);
     font-weight: 700;
     line-height: 0.9;
@@ -354,7 +417,8 @@ html {
     text-transform: uppercase;
 }
 
-.hero h1 span {
+.hero h1 span,
+.about-hero h1 span {
     color: transparent;
     -webkit-text-stroke: 1px rgba(242, 240, 239, 0.68);
 }
@@ -389,7 +453,6 @@ html {
     padding: 0 22px;
     background: transparent;
     color: var(--ink);
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.06em;
@@ -426,7 +489,6 @@ html {
 
 .intro h2 {
     max-width: 690px;
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: clamp(42px, 5.4vw, 78px);
     font-weight: 700;
     line-height: 0.98;
@@ -488,7 +550,6 @@ html {
     margin-top: 28px;
 }
 
-
 .project-card__image {
     position: relative;
     grid-row: 1 / 3;
@@ -527,7 +588,6 @@ html {
 }
 
 .project-card__meta h3 {
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: clamp(22px, 2.3vw, 34px);
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -600,17 +660,11 @@ html {
 
 .statement__quote {
     grid-column: 1;
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: clamp(50px, 6.4vw, 92px);
     font-weight: 700;
     line-height: 0.92;
     letter-spacing: -0.055em;
     text-transform: uppercase;
-}
-
-.statement__quote span {
-    color: var(--ink);
-    -webkit-text-stroke: 0;
 }
 
 .statement__aside {
@@ -659,7 +713,6 @@ html {
 .process__intro h2,
 .about-intro__heading h2 {
     max-width: 620px;
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: clamp(40px, 5.2vw, 72px);
     font-weight: 700;
     line-height: 0.98;
@@ -718,7 +771,6 @@ html {
 .process-step td>span,
 .studio-timeline time {
     color: var(--orange);
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: clamp(26px, 3vw, 42px);
     font-weight: 700;
     line-height: 1;
@@ -727,7 +779,6 @@ html {
 
 .process-step h3,
 .studio-timeline h3 {
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: clamp(26px, 3vw, 42px);
     font-weight: 700;
     line-height: 1;
@@ -770,48 +821,6 @@ html {
 .work-page {
     min-height: 100vh;
     background: var(--night);
-}
-
-.work-page__hero {
-    position: relative;
-    display: grid;
-    min-height: 350px;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-content: center;
-    margin-top: 82px;
-    overflow: visible;
-    border-radius: 20px;
-    background: var(--night);
-    padding: 54px 5.3% 42px;
-}
-
-.work-page__hero>.hero__aurora,
-.work-page__hero>.hero__glow {
-    z-index: 1;
-}
-
-.work-page__hero>.hero__aurora {
-    top: -28%;
-    bottom: -28%;
-    filter: blur(16px);
-    opacity: 1;
-}
-
-.work-page__hero>p,
-.work-page__hero>h1,
-.work-page__hero>div:not(.hero__aurora):not(.hero__glow) {
-    position: relative;
-    z-index: 2;
-}
-
-.work-page__hero h1 {
-    font-family: "Coco Sharp", "Inter", sans-serif;
-    font-size: clamp(44px, 5.8vw, 72px);
-    font-weight: 700;
-    line-height: 0.88;
-    letter-spacing: -0.065em;
-    text-transform: uppercase;
 }
 
 .work-page__hero>div:not(.hero__aurora):not(.hero__glow) {
@@ -884,7 +893,6 @@ html {
     padding: 12px 17px;
     color: var(--muted);
     cursor: pointer;
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.05em;
@@ -953,7 +961,6 @@ html {
 
 .work-library__card h2 {
     margin-top: 10px;
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: clamp(25px, 3vw, 40px);
     font-weight: 700;
     line-height: 1;
@@ -983,7 +990,7 @@ html {
     display: none;
 }
 
-/* Shared calls to action and homepage contact form */
+/* Shared calls to action and forms */
 .work-cta,
 .about-cta {
     display: grid;
@@ -997,7 +1004,6 @@ html {
 .work-cta h2,
 .about-cta h2 {
     max-width: 780px;
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: clamp(42px, 5.6vw, 76px);
     font-weight: 700;
     line-height: 0.95;
@@ -1005,7 +1011,8 @@ html {
     text-transform: uppercase;
 }
 
-.work-cta .cta-button {
+.work-cta .cta-button,
+.about-cta .cta-button {
     grid-column: 2;
 }
 
@@ -1018,15 +1025,10 @@ html {
 .about-cta>div>p {
     margin: 0 0 18px;
     color: var(--orange);
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-}
-
-.about-cta .cta-button {
-    grid-column: 2;
 }
 
 .contact-form {
@@ -1039,7 +1041,6 @@ html {
 
 .contact-form__intro h2 {
     max-width: 600px;
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: clamp(40px, 5vw, 70px);
     font-weight: 700;
     line-height: 0.96;
@@ -1047,27 +1048,54 @@ html {
     text-transform: uppercase;
 }
 
-.contact-form form {
+.contact-form form,
+.inquiry-form,
+.login-form {
     display: grid;
+}
+
+.contact-form form,
+.inquiry-form {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-form form {
     gap: 30px 22px;
 }
 
-.contact-form label {
+.inquiry-form,
+.login-form {
+    gap: 28px 20px;
+    margin-top: 0;
+}
+
+.contact-form label,
+.inquiry-form label,
+.login-form label {
     display: flex;
     min-width: 0;
     flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form label {
     gap: 11px;
 }
 
-.contact-form label>span {
+.contact-form label>span,
+.inquiry-form label>span,
+.login-form label>span {
     color: var(--muted);
     font-size: 11px;
 }
 
 .contact-form input,
 .contact-form select,
-.contact-form textarea {
+.contact-form textarea,
+.inquiry-form input,
+.inquiry-form select,
+.inquiry-form textarea,
+.login-form input {
     width: 100%;
     border: 0;
     border-bottom: 1px solid rgba(242, 240, 239, 0.3);
@@ -1081,7 +1109,10 @@ html {
 }
 
 .contact-form input,
-.contact-form select {
+.contact-form select,
+.inquiry-form input,
+.inquiry-form select,
+.login-form input {
     height: 48px;
 }
 
@@ -1090,22 +1121,36 @@ html {
     resize: vertical;
 }
 
-.contact-form select option {
+.inquiry-form textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.contact-form select option,
+.inquiry-form select option {
     background: var(--night);
     color: var(--ink);
 }
 
 .contact-form input:focus,
 .contact-form select:focus,
-.contact-form textarea:focus {
+.contact-form textarea:focus,
+.inquiry-form input:focus,
+.inquiry-form select:focus,
+.inquiry-form textarea:focus,
+.login-form input:focus {
     border-color: var(--orange);
 }
 
-.contact-form__message {
+.contact-form__message,
+.inquiry-form__message {
     grid-column: 1 / -1;
 }
 
-.contact-form form .cta-button {
+.contact-form form .cta-button,
+.inquiry-form .cta-button,
+.login-form .cta-button {
+    width: fit-content;
     margin-top: 8px;
     cursor: pointer;
 }
@@ -1116,53 +1161,12 @@ html {
     background: var(--night);
 }
 
-.about-hero {
-    position: relative;
-    display: grid;
-    min-height: 350px;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-content: center;
-    margin-top: 82px;
-    overflow: visible;
-    border-radius: 20px;
-    background: var(--night);
-    padding: 54px 5.3% 42px;
-}
-
-.about-hero>.hero__aurora,
-.about-hero>.hero__glow {
-    z-index: 1;
-}
-
-.about-hero>.hero__aurora,
-.contact-hero>.hero__aurora {
-    top: -28%;
-    bottom: -28%;
-    filter: blur(16px);
-    opacity: 1;
-}
-
 .about-hero h1 {
-    position: relative;
-    z-index: 2;
     grid-column: 1 / -1;
     max-width: 1180px;
-    font-family: "Coco Sharp", "Inter", sans-serif;
-    font-size: clamp(44px, 5.8vw, 72px);
-    font-weight: 700;
-    line-height: 0.88;
-    letter-spacing: -0.065em;
-    text-transform: uppercase;
-}
-
-.about-hero h1 span {
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(242, 240, 239, 0.68);
 }
 
 .team__heading h2 {
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: clamp(36px, 4.5vw, 62px);
     font-weight: 700;
     line-height: 0.98;
@@ -1279,7 +1283,6 @@ html {
 
 .designer-profile__role {
     color: var(--orange);
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -1289,7 +1292,6 @@ html {
 .designer-profile__story h3 {
     max-width: 590px;
     margin-top: 44px;
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: clamp(42px, 5vw, 68px);
     font-weight: 700;
     line-height: 0.94;
@@ -1338,7 +1340,6 @@ html {
     border-radius: 999px;
     padding: 8px 13px 7px;
     color: var(--ink);
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: 9px;
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -1351,41 +1352,7 @@ html {
     background: var(--night);
 }
 
-.contact-hero {
-    position: relative;
-    display: grid;
-    min-height: 350px;
-    grid-template-columns: 1.25fr 0.75fr;
-    gap: 60px;
-    align-content: center;
-    margin-top: 82px;
-    overflow: visible;
-    border-radius: 20px;
-    background: transparent;
-    padding: 70px 5.3% 56px;
-}
-
-.contact-hero>.hero__aurora,
-.contact-hero>.hero__glow {
-    z-index: 1;
-}
-
-.contact-hero>h1,
-.contact-hero__copy {
-    position: relative;
-    z-index: 2;
-}
-
-.contact-hero h1 {
-    align-self: end;
-    font-family: "Coco Sharp", "Inter", sans-serif;
-    font-size: clamp(44px, 5.8vw, 72px);
-    font-weight: 700;
-    line-height: 0.88;
-    letter-spacing: -0.065em;
-    text-transform: uppercase;
-}
-
+.contact-hero h1,
 .contact-hero__copy {
     align-self: end;
 }
@@ -1401,7 +1368,6 @@ html {
     display: block;
     margin-top: 26px;
     color: var(--orange);
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -1471,7 +1437,6 @@ html {
 
 .contact-panel__heading>p {
     color: var(--orange);
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -1480,7 +1445,6 @@ html {
 
 .contact-panel__heading h2 {
     margin-top: 34px;
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: clamp(38px, 4vw, 58px);
     font-weight: 700;
     line-height: 0.95;
@@ -1497,53 +1461,6 @@ html {
     line-height: 1.5;
 }
 
-.inquiry-form,
-.login-form {
-    display: grid;
-    gap: 28px 20px;
-    margin-top: 0;
-}
-
-.inquiry-form {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.inquiry-form label,
-.login-form label {
-    display: flex;
-    min-width: 0;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.inquiry-form label>span,
-.login-form label>span {
-    color: var(--muted);
-    font-size: 11px;
-}
-
-.inquiry-form input,
-.inquiry-form select,
-.inquiry-form textarea,
-.login-form input {
-    width: 100%;
-    border: 0;
-    border-bottom: 1px solid rgba(242, 240, 239, 0.3);
-    border-radius: 0;
-    outline: 0;
-    background: transparent;
-    color: var(--ink);
-    font: inherit;
-    font-size: 15px;
-    transition: border-color 180ms ease;
-}
-
-.inquiry-form input,
-.inquiry-form select,
-.login-form input {
-    height: 48px;
-}
-
 .inquiry-form select {
     appearance: none;
     -webkit-appearance: none;
@@ -1554,36 +1471,8 @@ html {
     padding-right: 24px;
 }
 
-.inquiry-form select option {
-    background: var(--night);
-    color: var(--ink);
-}
-
-.inquiry-form textarea {
-    min-height: 130px;
-    resize: vertical;
-}
-
-.inquiry-form input:focus,
-.inquiry-form select:focus,
-.inquiry-form textarea:focus,
-.login-form input:focus {
-    border-color: var(--orange);
-}
-
 .login-form input:invalid:not(:placeholder-shown) {
     border-color: rgba(245, 77, 2, 0.8);
-}
-
-.inquiry-form__message {
-    grid-column: 1 / -1;
-}
-
-.inquiry-form .cta-button,
-.login-form .cta-button {
-    width: fit-content;
-    margin-top: 8px;
-    cursor: pointer;
 }
 
 .login-form small {
@@ -1661,7 +1550,6 @@ footer>* {
 
 .footer__intro h2 {
     max-width: 380px;
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: clamp(16px, 1.5vw, 22px);
     font-weight: 700;
     letter-spacing: -0.04em;
@@ -1698,7 +1586,6 @@ footer>* {
 .footer__column h3 {
     margin-bottom: 12px;
     color: var(--muted);
-    font-family: "Coco Sharp", "Inter", sans-serif;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -1915,11 +1802,17 @@ footer>* {
         transform: rotate(-45deg);
     }
 
+    .hero,
+    .about-hero,
+    .work-page__hero,
+    .contact-hero {
+        margin-top: 64px;
+        border-radius: 15px;
+    }
+
     .hero {
         height: 690px;
         min-height: 0;
-        margin-top: 64px;
-        border-radius: 15px;
     }
 
     .hero h1 {
@@ -2014,14 +1907,11 @@ footer>* {
 
     .statement__quote {
         grid-row: 1;
+        font-size: 47px;
     }
 
     .statement__aside {
         grid-row: 2;
-    }
-
-    .statement__quote {
-        font-size: 47px;
     }
 
     .statement__body {
@@ -2085,17 +1975,17 @@ footer>* {
         margin-top: 8px;
     }
 
-    .about-hero {
+    .about-hero,
+    .work-page__hero {
         min-height: 300px;
         grid-template-columns: 1fr;
         gap: 28px;
-        align-content: center;
-        margin-top: 64px;
-        border-radius: 15px;
         padding: 54px 20px 38px;
     }
 
-    .about-hero h1 {
+    .about-hero h1,
+    .work-page__hero h1,
+    .contact-hero h1 {
         font-size: 42px;
     }
 
@@ -2177,19 +2067,6 @@ footer>* {
         font-size: clamp(38px, 12vw, 54px);
     }
 
-    .work-page__hero {
-        min-height: 300px;
-        grid-template-columns: 1fr;
-        gap: 28px;
-        margin-top: 64px;
-        border-radius: 15px;
-        padding: 54px 20px 38px;
-    }
-
-    .work-page__hero h1 {
-        font-size: 42px;
-    }
-
     .work-filter {
         padding-block: 26px 110px;
     }
@@ -2233,11 +2110,7 @@ footer>* {
         padding-block: 90px 110px;
     }
 
-    .work-cta .cta-button {
-        grid-column: 1;
-        margin-top: -16px;
-    }
-
+    .work-cta .cta-button,
     .about-cta .cta-button {
         grid-column: 1;
         margin-top: -16px;
@@ -2259,13 +2132,7 @@ footer>* {
         min-height: 300px;
         grid-template-columns: 1fr;
         gap: 16px;
-        margin-top: 64px;
-        border-radius: 15px;
         padding: 32px 20px 24px;
-    }
-
-    .contact-hero h1 {
-        font-size: 42px;
     }
 
     .contact-hero__copy {
@@ -2301,6 +2168,7 @@ footer>* {
     }
 }
 
+/* small/old mobile */
 @media (max-width: 420px) {
     .hero {
         height: 640px;
